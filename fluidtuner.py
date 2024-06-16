@@ -17,7 +17,7 @@ Written by Thomas Nicholson, June 2024
 www.superparticular.com
 
 usage: python3 fluidtuner.py [-h] [--unity] [--offset] [--name] [--bank] [--program] [--output] input
-Note: unity must be one of C, C#, Db, D, D#, Eb, E, F, F#, Gb, G, G#, Ab, A, A#, Bb, B}
+Note: --unity must be one of C, C#, Db, D, D#, Eb, E, F, F#, Gb, G, G#, Ab, A, A#, Bb, B
 
 For more information run: python3 fluidtuner.py -h
 """
