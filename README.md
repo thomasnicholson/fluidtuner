@@ -10,9 +10,15 @@ While Fluidtuner itself is a Python program, the actual tuning information to be
 - Any fraction of decimal numbers (e.g. 1.2378/1.1854)
 - Any single decimal number (e.g. 1.9875)
 
-Note: Fluidtuner assumes that the order of the ratios on each line is in the order you intended and therefore does not do any sorting. Equally, you should keep in mind that tunings are understood as octave-repeating, so whole and decimal numbers greater or equal to 2 are not useful unless you have an unorthordox usage in mind. This also means that the octave itself should not be included in your tuning information (i.e. do not end a 12-note tuning with 2/1).
+It is not necessary for fractions to be simplified. 
 
-To process the tuning information, run:
+Fluidtuner assumes that the order of the ratios on each line is in the order you intend and therefore does not do any kind of sorting. 
+
+You should also keep in mind that tunings are understood as octave-repeating, so whole and decimal numbers greater or equal to 2 are unlikely to be useful unless you have an atypical implementation in mind. This also means that the octave itself should not be included in your tuning information (i.e. do not end a 12-note tuning with 2/1).
+
+A line beginning with a hash (#) is treated as a comment and not read as tuning information.
+
+To process your tuning information, run:
 
     python3 fluidtuner.py /path/to/input/file.txt
 
@@ -24,9 +30,7 @@ Fluidtuner accepts the following options:
 
     --unity
 
-The chromatic note of the tuning’s unity 1/1 (string [C, C#, Db, D, D#, Eb, E, F, F#, Gb, G, G#, Ab, A, A#, Bb, B], default: C).
-
-Note: the diatonic note name must be capitalized.
+The chromatic note of the tuning’s unity 1/1 (string [C, C#, Db, D, D#, Eb, E, F, F#, Gb, G, G#, Ab, A, A#, Bb, B], default: C). The diatonic note name must be capitalized.
 
     --offset
 
@@ -38,15 +42,11 @@ The name of your tuning (string, default: MyTuning).
     
     --bank
 
-The Fluidsynth tuning bank start point (integer [0–127], default: 1). 
-
-Note: if you have many tunings to process this value will increment accordingly.
+The Fluidsynth tuning bank start point (integer [0–127], default: 1). If you have many tunings to process this value will increment accordingly.
     
     --program
 
-The tuning bank program number as start point (integer [0–127], default: 0).
-
-Note: this value increments for each tuning you are processing. Having many tunings will have an effect on the bank number as well. E.g. if you process 100 tunings beginning with bank 1 and program 127, the remaining tunings after the first (bank 1, program 127) will automatically save to bank 2, programs 0–98.
+The tuning bank program number as start point (integer [0–127], default: 0). This value increments for each tuning you are processing. Having many tunings will have an effect on the bank number as well. E.g. if you process 100 tunings beginning with bank 1 and program 127, the remaining tunings after the first (bank 1, program 127) will automatically save to bank 2, programs 0–98.
     
     --output
 
