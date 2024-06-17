@@ -39,12 +39,14 @@ The name of your tuning (string, default: MyTuning).
     --bank
 
 The Fluidsynth tuning bank start point (integer 0–127, default: 1). 
-*Note: if you have many tunings to process this value will increment accordingly.*
+
+Note: if you have many tunings to process this value will increment accordingly.
     
     --program
 
 The tuning bank program number as start point (integer 0–127, default: 0).
-*Note: this value increments for each tuning you are processing. Having many tunings will have an effect on the bank number as well. E.g. if you process 100 tunings beginning with bank 1 and program 127, the remaining tunings after the first (bank 1, program 127) will automatically save to bank 2, programs 0–98.*
+
+Note: this value increments for each tuning you are processing. Having many tunings will have an effect on the bank number as well. E.g. if you process 100 tunings beginning with bank 1 and program 127, the remaining tunings after the first (bank 1, program 127) will automatically save to bank 2, programs 0–98.
     
     --output
 
